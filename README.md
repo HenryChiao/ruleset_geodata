@@ -264,39 +264,47 @@ curl -o %APPDATA%\io.github.clash-verge-rev.clash-verge-rev\ASN.mmdb -L https://
 <details>
 <summary>① mihomo 内核</summary>
 
-- 注：以下只是节选，请酌情套用
+注：
+- 1. 若不需要图标（也可使用[数据源](https://github.com/DustinWin/ruleset_geodata?tab=readme-ov-file#2-%E6%95%B0%E6%8D%AE%E6%BA%90-1)中的 emoji），请自行删除策略组 `proxy-groups` 中的 `icon` 配置项
+- 2. 以下只是节选，请酌情套用
 
 ```
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点]}
-  - {name: 📈 网络测试, type: select, proxies: [🎯 全球直连, 🇭🇰 香港节点, 🇹🇼 台湾节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点]}
-  - {name: 🤖 人工智能, type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点]}
-  - {name: 📥 Trackerslist, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
-  - {name: 🎮 游戏服务, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
-  - {name: 🪟 微软服务, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
-  - {name: 🇬 谷歌服务, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
-  - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
-  - {name: 🎥 奈飞视频, type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点]}
-  - {name: 📽️ 迪士尼+, type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点]}
-  - {name: 🎞️ Max, type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点]}
-  - {name: 🎬 Prime Video, type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点]}
-  - {name: 🍎 Apple TV+, type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点]}
-  - {name: 📹 油管视频, type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点]}
-  - {name: 🎵 TikTok, type: select, proxies: [🚀 节点选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点]}
-  - {name: 📺 哔哩哔哩, type: select, proxies: [🎯 全球直连, 🚀 节点选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点]}
-  - {name: 🛡️ 直连顶级域名, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
-  - {name: 🛡️ 直连域名, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
-  - {name: 🀄️ 直连 IP, type: select, proxies: [🎯 全球直连, 🚀 节点选择]}
-  - {name: 🧱 代理顶级域名, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
-  - {name: 🧱 代理域名, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
-  - {name: 📲 电报消息, type: select, proxies: [🚀 节点选择]}
-  - {name: 🖥️ 直连软件, type: select, proxies: [🎯 全球直连]}
-  - {name: 🔒 私有网络, type: select, proxies: [🎯 全球直连]}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 全球直连]}
-  - {name: 🛑 广告域名, type: select, proxies: [🔴 全球拦截, 🟢 全球绕过]}
-  - {name: 🔴 全球拦截, type: select, proxies: [REJECT]}
-  - {name: 🟢 全球绕过, type: select, proxies: [PASS]}
-  - {name: 🎯 全球直连, type: select, proxies: [DIRECT]}
+  - {name: 节点选择, type: select, proxies: [香港节点, 台湾节点, 日本节点, 韩国节点, 新加坡节点, 美国节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/proxy.png"}
+  - {name: 网络测试, type: select, proxies: [全球直连, 香港节点, 台湾节点, 日本节点, 韩国节点, 新加坡节点, 美国节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/networktest.png"}
+  - {name: 人工智能, type: select, proxies: [节点选择, 香港节点, 日本节点, 新加坡节点, 美国节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/ai.png"}
+  - {name: Trackerslist, type: select, proxies: [全球直连, 节点选择], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/trackerslist.png"}
+  - {name: 游戏服务, type: select, proxies: [全球直连, 节点选择], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/games-cn.png}
+  - {name: 微软服务, type: select, proxies: [全球直连, 节点选择], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/microsoft-cn.png"}
+  - {name: 谷歌服务, type: select, proxies: [全球直连, 节点选择], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/google-cn.png"}
+  - {name: 苹果服务, type: select, proxies: [全球直连, 节点选择], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/apple-cn.png"}
+  - {name: 奈飞视频, type: select, proxies: [节点选择, 香港节点, 日本节点, 新加坡节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/netflix.png"}
+  - {name: 迪士尼+, type: select, proxies: [节点选择, 香港节点, 日本节点, 新加坡节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/disney.png"}
+  - {name: Max, type: select, proxies: [节点选择, 香港节点, 日本节点, 新加坡节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/max.png"}
+  - {name: Prime Video, type: select, proxies: [节点选择, 香港节点, 日本节点, 新加坡节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/primevideo.png"}
+  - {name: Apple TV+, type: select, proxies: [节点选择, 香港节点, 日本节点, 新加坡节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/appletv.png"}
+  - {name: 油管视频, type: select, proxies: [节点选择, 香港节点, 日本节点, 新加坡节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/youtube.png"}
+  - {name: TikTok, type: select, proxies: [节点选择, 香港节点, 日本节点, 新加坡节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/tiktok.png"}
+  - {name: 哔哩哔哩, type: select, proxies: [全球直连, 节点选择, 香港节点, 日本节点, 新加坡节点], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/bilibili.png"}
+  - {name: 直连顶级域名, type: select, proxies: [全球直连, 节点选择], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/cn.png"}
+  - {name: 直连域名, type: select, proxies: [全球直连, 节点选择], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/cn.png"}
+  - {name: 直连 IP, type: select, proxies: [全球直连, 节点选择], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/cnip.png"}
+  - {name: 代理顶级域名, type: select, proxies: [节点选择, 全球直连], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/global.png"}
+  - {name: 代理域名, type: select, proxies: [节点选择, 全球直连], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/global.png"}
+  - {name: 电报消息, type: select, proxies: [节点选择], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/telegram.png"}
+  - {name: 直连软件, type: select, proxies: [全球直连], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/applications.png"}
+  - {name: 私有网络, type: select, proxies: [全球直连], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/private.png"}
+  - {name: 漏网之鱼, type: select, proxies: [节点选择, 全球直连], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/match.png"}
+  - {name: 广告域名, type: select, proxies: [全球拦截, 全球绕过], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/ads.png"}
+  - {name: 全球拦截, type: select, proxies: [REJECT], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/reject.png"}
+  - {name: 全球绕过, type: select, proxies: [PASS], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/pass.png"}
+  - {name: 全球直连, type: select, proxies: [DIRECT], icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/direct.png"}
+
+  - {name: 香港节点, type: url-test, tolerance: 50, use: [🛫 机场订阅], filter: "(?i)(🇭🇰|港|hk|hongkong|hong kong)", icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/hongkong.png"}
+  - {name: 台湾节点, type: url-test, tolerance: 50, use: [🛫 机场订阅], filter: "(?i)(🇹🇼|台|tw|taiwan|tai wan)", icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/taiwan.png"}
+  - {name: 日本节点, type: url-test, tolerance: 50, use: [🛫 机场订阅], filter: "(?i)(🇯🇵|日|jp|japan)", icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/japan.png"}
+  - {name: 新加坡节点, type: url-test, tolerance: 50, use: [🛫 机场订阅], filter: "(?i)(🇸🇬|新|sg|singapore)", icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/singapore.png"}
+  - {name: 美国节点, type: url-test, tolerance: 50, use: [🛫 机场订阅], filter: "(?i)(🇺🇸|美|us|unitedstates|united states)", icon: "https://github.com/DustinWin/ruleset_geodata/releases/download/icon/unitedstates.png"}
 
 rule-providers:
   # 任选一
@@ -525,32 +533,32 @@ rule-providers:
     interval: 86400
 
 rules:
-  - RULE-SET,private,🔒 私有网络
-  - RULE-SET,ads,🛑 广告域名
-  - RULE-SET,trackerslist,📥 Trackerslist
-  - RULE-SET,applications,🖥️ 直连软件
-  - RULE-SET,microsoft-cn,🪟 微软服务
-  - RULE-SET,apple-cn,🍎 苹果服务
-  - RULE-SET,google-cn,🇬 谷歌服务
-  - RULE-SET,games-cn,🎮 游戏服务
-  - RULE-SET,netflix,🎥 奈飞视频
-  - RULE-SET,disney,📽️ 迪士尼+
-  - RULE-SET,max,🎞️ Max
-  - RULE-SET,primevideo,🎬 Prime Video
-  - RULE-SET,appletv,🍎 Apple TV+
-  - RULE-SET,youtube,📹 油管视频
-  - RULE-SET,tiktok,🎵 TikTok
-  - RULE-SET,bilibili,📺 哔哩哔哩
-  - RULE-SET,ai,🤖 人工智能
-  - RULE-SET,networktest,📈 网络测试
-  - RULE-SET,tld-proxy,🧱 代理顶级域名
-  - RULE-SET,proxy,🧱 代理域名
-  - RULE-SET,tld-cn,🛡️ 直连顶级域名
-  - RULE-SET,cn,🛡️ 直连域名
-  - RULE-SET,privateip,🔒 私有网络,no-resolve
-  - RULE-SET,cnip,🀄️ 直连 IP
-  - RULE-SET,netflixip,🎥 奈飞视频,no-resolve
-  - RULE-SET,telegramip,📲 电报消息,no-resolve
+  - RULE-SET,private,私有网络
+  - RULE-SET,ads,广告域名
+  - RULE-SET,trackerslist,Trackerslist
+  - RULE-SET,applications,直连软件
+  - RULE-SET,microsoft-cn,微软服务
+  - RULE-SET,apple-cn,苹果服务
+  - RULE-SET,google-cn,谷歌服务
+  - RULE-SET,games-cn,游戏服务
+  - RULE-SET,netflix,奈飞视频
+  - RULE-SET,disney,迪士尼+
+  - RULE-SET,max,Max
+  - RULE-SET,primevideo,Prime Video
+  - RULE-SET,appletv,Apple TV+
+  - RULE-SET,youtube,油管视频
+  - RULE-SET,tiktok,TikTok
+  - RULE-SET,bilibili,哔哩哔哩
+  - RULE-SET,ai,人工智能
+  - RULE-SET,networktest,网络测试
+  - RULE-SET,tld-proxy,代理顶级域名
+  - RULE-SET,proxy,代理域名
+  - RULE-SET,tld-cn,直连顶级域名
+  - RULE-SET,cn,直连域名
+  - RULE-SET,privateip,私有网络,no-resolve
+  - RULE-SET,cnip,直连 IP
+  - RULE-SET,netflixip,奈飞视频,no-resolve
+  - RULE-SET,telegramip,电报消息,no-resolve
 ```
 </details>
 <details>
